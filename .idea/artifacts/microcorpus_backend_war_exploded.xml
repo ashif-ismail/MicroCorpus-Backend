@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="microcorpus-backend:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/microcorpus_backend_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="microcorpus-backend/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="microcorpus-backend" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="AppEngine API" />
+          <element id="library" level="application" name="Spring MVC" />
+          <element id="library" level="project" name="Hibernate" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.35-bin.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
