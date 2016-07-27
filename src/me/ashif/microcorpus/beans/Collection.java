@@ -1,6 +1,7 @@
 package me.ashif.microcorpus.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Collection_Details")
 public class Collection {
-
+   @Id
     private int collectionID;
     private int connectionID;
     private int collectionAmount;

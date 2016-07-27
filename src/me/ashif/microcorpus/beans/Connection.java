@@ -1,6 +1,7 @@
 package me.ashif.microcorpus.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Connection_Details")
 public class Connection {
-
+    @Id
     private int connectionID;
     private int personID;
     private String dateOfConn;

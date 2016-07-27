@@ -14,5 +14,9 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.cache.use_second_level_cache">true</property>
         <mapping class="me.ashif.microcorpus.beans.User"/>
+        <mapping class="me.ashif.microcorpus.beans.Employee"/>
+        <mapping class="me.ashif.microcorpus.beans.Customer"/>
+        <mapping class="me.ashif.microcorpus.beans.Collection"/>
+        <mapping class="me.ashif.microcorpus.beans.Connection"/>
     </session-factory>
 </hibernate-configuration>

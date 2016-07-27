@@ -7,14 +7,7 @@ import me.ashif.microcorpus.dao.ConnectionDAO;
 /**
  * Created by almukthar on 26/7/16.
  */
-public class ConnectionService implements ConnectionDAO {
-    @Override
-    public void addCustomer(Customer c) {
-
-    }
-
-    @Override
-    public void addConnection(Connection conn) {
-
-    }
+public interface ConnectionService {
+    void addCustomer(Customer c);
+    void addConnection(Connection conn);
 }

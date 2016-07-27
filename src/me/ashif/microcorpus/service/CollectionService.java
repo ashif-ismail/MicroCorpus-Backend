@@ -7,14 +7,7 @@ import me.ashif.microcorpus.dao.CollectionDAO;
 /**
  * Created by almukthar on 26/7/16.
  */
-public class CollectionService implements CollectionDAO {
-    @Override
-    public Customer viewCustomer(int id) {
-        return null;
-    }
-
-    @Override
-    public void addCollection(Collection collection) {
-
-    }
+public interface CollectionService {
+    Customer viewCustomer(int id);
+    void addCollection(Collection collection);
 }

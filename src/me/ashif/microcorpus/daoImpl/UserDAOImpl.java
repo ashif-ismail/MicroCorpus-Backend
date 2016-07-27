@@ -2,34 +2,30 @@ package me.ashif.microcorpus.daoImpl;
 
 import me.ashif.microcorpus.beans.User;
 import me.ashif.microcorpus.dao.UserDAO;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import me.ashif.microcorpus.methods.utilMethods;
 import org.springframework.stereotype.Repository;
 
 /**
  * Created by almukthar on 26/7/16.
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
  */
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-    private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
     @Override
     public void addUser(User user) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.persist(user);
-        session.getTransaction().commit();
-        session.close();
+            utilMethods.getSessionandSave(user);
     }
 
     @Override
     public void updateUser(User user) {
+            utilMethods.getSessionandUpdate(user);
+    }
+
+    @Override
+    public void removeUser(int id) {
 
     }
 }

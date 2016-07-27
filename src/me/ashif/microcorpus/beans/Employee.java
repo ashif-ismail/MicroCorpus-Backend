@@ -1,8 +1,6 @@
 package me.ashif.microcorpus.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by almukthar on 26/7/16.
@@ -11,12 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Employee_Details")
 public class Employee {
-
     private String firstName;
     private String lastName;
     private String email;
     private String dateOfJoin;
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int empID;
     private String username;
     private String password;

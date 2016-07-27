@@ -8,4 +8,5 @@ import me.ashif.microcorpus.beans.User;
 public interface UserDAO {
     void addUser(User user);
     void updateUser(User user);
+    void removeUser(int id);
 }
