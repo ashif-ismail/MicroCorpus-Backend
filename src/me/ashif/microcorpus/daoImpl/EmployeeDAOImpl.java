@@ -5,6 +5,8 @@ import me.ashif.microcorpus.dao.EmployeeDAO;
 import me.ashif.microcorpus.methods.utilMethods;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -15,23 +17,29 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
+
     @Override
     public void addEmployee(Employee e) {
         utilMethods.getSessionandSave(e);
     }
 
     @Override
-    public void removeEmployee(int id) {
-
+    public void removeEmployeeByID(int id) {
+        utilMethods.removeEmployeeByID(id);
     }
 
     @Override
-    public void updateEmployee(Employee e) {
-
+    public void updateEmployee(int id,Employee e) {
+        utilMethods.updateEmployeeById(id,e);
     }
 
     @Override
-    public Employee viewEmployeeById(int id) {
-        return null;
+    public List<Employee> getEmployeeById(int id)  {
+        return utilMethods.getEmployeeById(id);
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return utilMethods.getAllEmployees();
     }
 }

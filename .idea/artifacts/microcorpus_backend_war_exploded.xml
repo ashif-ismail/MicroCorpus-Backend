@@ -12,6 +12,8 @@
           <element id="library" level="application" name="Spring MVC" />
           <element id="library" level="project" name="Hibernate" />
           <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.35-bin.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/gson-2.6.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/Videos/com.fasterxml.jackson.core.jar" />
         </element>
       </element>
     </root>

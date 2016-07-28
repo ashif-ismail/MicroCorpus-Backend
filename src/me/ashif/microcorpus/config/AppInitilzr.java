@@ -1,11 +1,25 @@
-package me.ashif.microcorpus;
+package me.ashif.microcorpus.config;
 
 
+import me.ashif.microcorpus.config.AppConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- * Created by almukthar on 26/7/16.
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
+ */
+
 public class AppInitilzr extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 

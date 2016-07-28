@@ -2,10 +2,18 @@ package me.ashif.microcorpus.dao;
 
 import me.ashif.microcorpus.beans.Customer;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 public interface CustomerDAO {
     void addCustomer(Customer customer);
-    Customer viewCustomer(int id);
+    List<Customer> getCustomerByID(int id);
+    List<Customer> getAllCustomers();
 }

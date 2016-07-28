@@ -7,9 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
@@ -33,7 +40,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUserByID(int id) {
+        this.userDAO.removeUserByID(id);
+    }
 
+    @Override
+    public List<User> getAllUsers() {
+       return this.userDAO.getAllUsers();
     }
 }

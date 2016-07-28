@@ -5,6 +5,8 @@ import me.ashif.microcorpus.dao.UserDAO;
 import me.ashif.microcorpus.methods.utilMethods;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by almukthar on 26/7/16.
  * Associate Software Engineer,TechJini Solutions
@@ -21,11 +23,16 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void updateUser(User user) {
-            utilMethods.getSessionandUpdate(user);
+//            utilMethods.getSessionandUpdate(user);
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUserByID(int id) {
+            utilMethods.removeUserByID(id);
+    }
 
+    @Override
+    public List<User> getAllUsers() {
+        return utilMethods.getAllUsers();
     }
 }

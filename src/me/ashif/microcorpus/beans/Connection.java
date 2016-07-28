@@ -1,31 +1,35 @@
 package me.ashif.microcorpus.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-/**
- * Created by almukthar on 26/7/16.
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 @Entity
 @Table(name = "Connection_Details")
 public class Connection {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int connectionID;
     private int personID;
     private String dateOfConn;
-    private int initialDue;
-    private int dateOfDue;
-    private int installmentAmount;
+    private String initialDue;
+    private String dateOfDue;
+    private String installmentAmount;
     private String InstallmentType;
-    private int outstandingAmount;
+    private String outstandingAmount;
 
-    public int getConnID() {
+    public int getConnectionID() {
         return connectionID;
     }
 
-    public void setConnID(int connID) {
-        this.connectionID = connID;
+    public void setConnectionID(int connectionID) {
+        this.connectionID = connectionID;
     }
 
     public int getPersonID() {
@@ -44,27 +48,27 @@ public class Connection {
         this.dateOfConn = dateOfConn;
     }
 
-    public int getInitialDue() {
+    public String getInitialDue() {
         return initialDue;
     }
 
-    public void setInitialDue(int initialDue) {
+    public void setInitialDue(String initialDue) {
         this.initialDue = initialDue;
     }
 
-    public int getDateOfDue() {
+    public String getDateOfDue() {
         return dateOfDue;
     }
 
-    public void setDateOfDue(int dateOfDue) {
+    public void setDateOfDue(String dateOfDue) {
         this.dateOfDue = dateOfDue;
     }
 
-    public int getInstallmentAmount() {
+    public String getInstallmentAmount() {
         return installmentAmount;
     }
 
-    public void setInstallmentAmount(int installmentAmount) {
+    public void setInstallmentAmount(String installmentAmount) {
         this.installmentAmount = installmentAmount;
     }
 
@@ -76,11 +80,11 @@ public class Connection {
         InstallmentType = installmentType;
     }
 
-    public int getOutstandingAmount() {
+    public String getOutstandingAmount() {
         return outstandingAmount;
     }
 
-    public void setOutstandingAmount(int outstandingAmount) {
+    public void setOutstandingAmount(String outstandingAmount) {
         this.outstandingAmount = outstandingAmount;
     }
 }

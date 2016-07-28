@@ -8,9 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 @Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -29,18 +36,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional
-    public void removeEmployee(int id) {
-
+    public void removeEmployeeByID(int id) {
+        this.employeeDAO.removeEmployeeByID(id);
     }
 
     @Override
     @Transactional
-    public void updateEmployee(Employee e) {
-        this.employeeDAO.updateEmployee(e);
+    public void updateEmployee(int id,Employee e) {
+        this.employeeDAO.updateEmployee(id,e);
     }
 
     @Override
-    public Employee viewEmployeeById(int id) {
-        return null;
+    public List<Employee> getEmployeeById(int id){
+       return this.employeeDAO.getEmployeeById(id);
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return this.employeeDAO.getAllEmployees();
     }
 }

@@ -1,7 +1,33 @@
 package me.ashif.microcorpus.serviceImpl;
 
-/**
- * Created by almukthar on 26/7/16.
+import me.ashif.microcorpus.beans.Connection;
+import me.ashif.microcorpus.dao.ConnectionDAO;
+import me.ashif.microcorpus.service.ConnectionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
-public class ConnectionServiceImpl {
+
+@Service("connectionService")
+public class ConnectionServiceImpl implements ConnectionService {
+
+    @Autowired
+    private ConnectionDAO connectionDAO;
+
+    public ConnectionServiceImpl(ConnectionDAO connectionDAO) {
+        this.connectionDAO = connectionDAO;
+    }
+
+    @Override
+    @Transactional
+    public void addConnection(Connection conn) {
+        this.connectionDAO.addConnection(conn);
+    }
 }

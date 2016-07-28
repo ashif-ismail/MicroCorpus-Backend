@@ -4,10 +4,18 @@ import me.ashif.microcorpus.beans.Customer;
 import me.ashif.microcorpus.dao.CustomerDAO;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 public interface CustomerService {
     void addCustomer(Customer customer);
-    Customer viewCustomer(int id);
+    List<Customer> getCustomerByID(int id);
+    List<Customer> getAllCustomers();
 }

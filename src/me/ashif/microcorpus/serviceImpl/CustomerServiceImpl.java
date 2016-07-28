@@ -7,9 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
@@ -27,7 +34,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer viewCustomer(int id) {
-        return null;
+    public List<Customer> getCustomerByID(int id) {
+        return this.customerDAO.getCustomerByID(id);
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        return this.customerDAO.getAllCustomers();
     }
 }

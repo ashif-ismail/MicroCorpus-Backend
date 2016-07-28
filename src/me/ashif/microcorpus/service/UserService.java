@@ -5,11 +5,19 @@ import me.ashif.microcorpus.dao.UserDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-/**
- * Created by almukthar on 26/7/16.
+import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
  */
+
 public interface UserService {
     void addUser(User user);
     void updateUser(User user);
-    void removeUser(int id);
+    void removeUserByID(int id);
+    List<User> getAllUsers();
 }
