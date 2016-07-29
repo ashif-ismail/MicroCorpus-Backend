@@ -42,4 +42,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> getAllCustomers() {
         return this.customerDAO.getAllCustomers();
     }
+
+    @Override
+    public boolean customerLogin(String username, String password) {
+        return this.customerDAO.customerLogin(username, password);
+    }
 }

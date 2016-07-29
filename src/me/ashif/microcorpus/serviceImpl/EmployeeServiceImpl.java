@@ -55,4 +55,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAllEmployees() {
         return this.employeeDAO.getAllEmployees();
     }
+
+    @Override
+    public boolean employeeLogin(String username, String password) {
+        return this.employeeDAO.employeeLogin(username, password);
+    }
 }

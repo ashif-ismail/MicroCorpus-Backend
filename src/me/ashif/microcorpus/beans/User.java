@@ -15,9 +15,19 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private int loginID;
     private String username;
     private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getLoginID() {
         return loginID;

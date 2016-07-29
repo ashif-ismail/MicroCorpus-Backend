@@ -16,4 +16,5 @@ public interface CustomerDAO {
     void addCustomer(Customer customer);
     List<Customer> getCustomerByID(int id);
     List<Customer> getAllCustomers();
+    boolean customerLogin(String username,String password);
 }

@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class Connection {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
     private int connectionID;
     private int personID;
     private String dateOfConn;
@@ -24,6 +25,13 @@ public class Connection {
     private String InstallmentType;
     private String outstandingAmount;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getConnectionID() {
         return connectionID;
     }

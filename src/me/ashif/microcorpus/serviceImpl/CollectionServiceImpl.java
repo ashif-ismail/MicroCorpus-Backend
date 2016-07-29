@@ -7,6 +7,8 @@ import me.ashif.microcorpus.service.CollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -27,8 +29,8 @@ public class CollectionServiceImpl implements CollectionService {
 
 
     @Override
-    public Customer viewCustomer(int id) {
-        return null;
+    public List<Collection> getAllCollection() {
+        return this.collectionDAO.getAllCollection();
     }
 
     @Override

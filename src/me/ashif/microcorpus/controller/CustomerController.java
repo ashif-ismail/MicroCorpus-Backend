@@ -9,7 +9,6 @@ package me.ashif.microcorpus.controller;
  */
 
 import me.ashif.microcorpus.beans.Customer;
-import me.ashif.microcorpus.beans.Employee;
 import me.ashif.microcorpus.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -52,5 +51,14 @@ public class CustomerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(customers, HttpStatus.OK);
+    }
+    @RequestMapping(value = "/customer/login",method = RequestMethod.POST)
+    public ResponseEntity checkIfValidCustomer(@RequestParam("username") String username,@RequestParam("password") String password){
+        boolean isValid = this.customerService.customerLogin(username, password);
+        if (isValid)
+        {
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
 }

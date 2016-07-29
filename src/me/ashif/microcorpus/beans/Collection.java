@@ -7,12 +7,20 @@ import javax.persistence.*;
 public class Collection {
    @Id
    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
     private int collectionID;
     private int connectionID;
     private int collectionAmount;
     private String collectedBy;
     private String dateOfCollection;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getCollectionID() {
         return collectionID;
     }

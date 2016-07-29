@@ -15,18 +15,28 @@ import java.util.List;
 @Entity
 @Table(name="Employee_Details")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
     private String dateOfJoin;
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private int empID;
     private String username;
     private String password;
     private Long phoneNumber;
     private String Qualification;
     private String address;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;

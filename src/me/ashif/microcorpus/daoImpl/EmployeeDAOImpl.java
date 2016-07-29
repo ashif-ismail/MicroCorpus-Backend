@@ -42,4 +42,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public List<Employee> getAllEmployees() {
         return utilMethods.getAllEmployees();
     }
+
+    @Override
+    public boolean employeeLogin(String username, String password) {
+        return utilMethods.loginEmployee(username,password);
+    }
 }

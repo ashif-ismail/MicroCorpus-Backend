@@ -1,8 +1,6 @@
 package me.ashif.microcorpus.methods;
 
-import me.ashif.microcorpus.beans.Customer;
-import me.ashif.microcorpus.beans.Employee;
-import me.ashif.microcorpus.beans.User;
+import me.ashif.microcorpus.beans.*;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -61,10 +59,11 @@ public class utilMethods {
     public static List<Employee> getEmployeeById(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        String hqlQuery = "from Employee where empID = :empID";
+        String hqlQuery = "from Employee where id = :id";
         Query query = session.createQuery(hqlQuery);
-        query.setInteger("empID",id);
+        query.setInteger("id",id);
         List result = query.list();
+        session.getTransaction().commit();
         session.close();
         return result;
     }
@@ -93,6 +92,7 @@ public class utilMethods {
         Query query = session.createQuery(hqlQuery);
         query.setInteger("customerID",id);
         List result = query.list();
+        session.getTransaction().commit();
         session.close();
         return result;
     }
@@ -103,5 +103,72 @@ public class utilMethods {
         session.getTransaction().commit();
         session.close();
         return customerList;
+    }
+    public static List<Connection> getAllConnection(){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List<Connection> connectionList = session.createQuery("from Connection ").list();
+        session.getTransaction().commit();
+        session.close();
+        return connectionList;
+    }
+    public static List<Collection> getAllCollection(){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List<Collection> collectionList = session.createQuery("from Collection ").list();
+        session.getTransaction().commit();
+        session.close();
+        return collectionList;
+    }
+    public static boolean loginUser(String username,String password){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        boolean validUser = true;
+        String hqlQuery = "from User where username =:username and password =:password";
+        Query query = session.createQuery(hqlQuery);
+        query.setString("username",username);
+        query.setString("password",password);
+        List result =query.list();
+        if (result.isEmpty() || result.size() < 0)
+        {
+            validUser = false;
+        }
+        session.getTransaction().commit();
+        session.clear();
+        return validUser;
+    }
+    public static boolean loginEmployee(String username,String password){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        boolean validUser = true;
+        String hqlQuery = "from Employee where username =:username and password =:password";
+        Query query = session.createQuery(hqlQuery);
+        query.setString("username",username);
+        query.setString("password",password);
+        List result =query.list();
+        if (result.isEmpty() || result.size() < 0)
+        {
+            validUser = false;
+        }
+        session.getTransaction().commit();
+        session.clear();
+        return validUser;
+    }
+    public static boolean loginCustomer(String username,String password){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        boolean validUser = true;
+        String hqlQuery = "from Customer where username =:username and password =:password";
+        Query query = session.createQuery(hqlQuery);
+        query.setString("username",username);
+        query.setString("password",password);
+        List result =query.list();
+        if (result.isEmpty() || result.size() < 0)
+        {
+            validUser = false;
+        }
+        session.getTransaction().commit();
+        session.clear();
+        return validUser;
     }
 }

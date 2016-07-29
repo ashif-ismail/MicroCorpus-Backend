@@ -8,7 +8,6 @@ package me.ashif.microcorpus.controller;
  *
  */
 
-import me.ashif.microcorpus.beans.Employee;
 import me.ashif.microcorpus.beans.User;
 import me.ashif.microcorpus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//manager level access
 @RestController
 public class UserController {
 
@@ -40,10 +39,12 @@ public class UserController {
     public void updateUser(@ModelAttribute("user") User user) {
         this.userService.updateUser(user);
     }
-    @RequestMapping(value = "/user/{empID}",method = RequestMethod.DELETE)
-    public void deleteUserByID(@PathVariable("empID") int empID){
-        this.userService.removeUserByID(empID);
+
+    @RequestMapping(value = "/user/{id}",method = RequestMethod.DELETE)
+    public void deleteUserByID(@PathVariable("id") int id){
+        this.userService.removeUserByID(id);
     }
+
     @RequestMapping(value = "/users", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> user = userService.getAllUsers();
@@ -52,5 +53,14 @@ public class UserController {
             return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<List<User>>(user, HttpStatus.OK);
+    }
+    @RequestMapping(value = "/user/login",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity checkIfValidUser(@RequestParam("username") String username, @RequestParam("password") String password){
+        Boolean isValid = userService.login(username, password);
+        if (isValid)
+        {
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
 }

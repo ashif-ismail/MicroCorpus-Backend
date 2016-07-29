@@ -17,4 +17,5 @@ public interface UserDAO {
     void updateUser(User user);
     void removeUserByID(int id);
     List<User> getAllUsers();
+    boolean login(String username,String password);
 }

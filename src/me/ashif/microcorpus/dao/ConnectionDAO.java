@@ -4,6 +4,8 @@ import me.ashif.microcorpus.beans.Collection;
 import me.ashif.microcorpus.beans.Connection;
 import me.ashif.microcorpus.beans.Customer;
 
+import java.util.List;
+
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -15,4 +17,5 @@ import me.ashif.microcorpus.beans.Customer;
 public interface ConnectionDAO {
 
     void addConnection(Connection conn);
+    List<Connection> getAllConnection();
 }

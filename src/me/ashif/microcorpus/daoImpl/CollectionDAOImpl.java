@@ -6,6 +6,8 @@ import me.ashif.microcorpus.dao.CollectionDAO;
 import me.ashif.microcorpus.methods.utilMethods;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -16,13 +18,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CollectionDAOImpl implements CollectionDAO {
-    @Override
-    public Customer viewCustomer(int id) {
-        return null;
-    }
 
     @Override
     public void addCollection(Collection collection) {
         utilMethods.getSessionandSave(collection);
+    }
+
+    @Override
+    public List<Collection> getAllCollection() {
+        return utilMethods.getAllCollection();
     }
 }

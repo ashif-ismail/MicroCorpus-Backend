@@ -3,6 +3,9 @@ package me.ashif.microcorpus.service;
 import me.ashif.microcorpus.beans.Collection;
 import me.ashif.microcorpus.beans.Customer;
 import me.ashif.microcorpus.dao.CollectionDAO;
+
+import java.util.List;
+
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -11,6 +14,6 @@ import me.ashif.microcorpus.dao.CollectionDAO;
  *
  */
 public interface CollectionService {
-    Customer viewCustomer(int id);
+    List<Collection> getAllCollection();
     void addCollection(Collection collection);
 }

@@ -25,21 +25,6 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
 
-    private ConnectionService connectionService;
-    private CollectionService collectionService;
-
-    @Autowired(required = true)
-    @Qualifier(value = "collectionService")
-    public void setCollectionService(CollectionService collectionService) {
-        this.collectionService = collectionService;
-    }
-
-    @Autowired(required = true)
-    @Qualifier(value = "connectionService")
-    public void setConnectionService(ConnectionService connectionService) {
-        this.connectionService = connectionService;
-    }
-
     @Autowired(required = true)
     @Qualifier(value = "employeeService")
     public void setEmployeeService(EmployeeService employeeService) {
@@ -50,16 +35,6 @@ public class EmployeeController {
     @RequestMapping(value = "/employee/add", method = RequestMethod.POST)
     public void addEmployee(@ModelAttribute("employee") Employee employee) {
         this.employeeService.addEmployee(employee);
-    }
-
-    @RequestMapping(value = "/connection/add", method = RequestMethod.POST)
-    public void addConnection(@ModelAttribute("connection") Connection connection) {
-        this.connectionService.addConnection(connection);
-    }
-
-    @RequestMapping(value = "/collection/add", method = RequestMethod.POST)
-    public void addCollection(@ModelAttribute("collection") Collection collection) {
-        this.collectionService.addCollection(collection);
     }
 
     @RequestMapping(value = "/employee/{empId}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
@@ -87,5 +62,15 @@ public class EmployeeController {
     @RequestMapping(value = "/employee/{empID}",method = RequestMethod.DELETE)
     public void deleteEmployee(@PathVariable("empID") int empID){
         this.employeeService.removeEmployeeByID(empID);
+    }
+
+    @RequestMapping(value = "employee/login",method = RequestMethod.POST)
+    public ResponseEntity checkIfValidEmployee(@RequestParam("username") String username , @RequestParam("password") String password){
+        boolean isValid = this.employeeService.employeeLogin(username, password);
+        if (isValid)
+        {
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
 }

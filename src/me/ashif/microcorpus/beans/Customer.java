@@ -15,15 +15,25 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
     private int customerID;
     private String customerType;
     private String customerName;
     private String customerFatherName;
     private String doc;
+    private String username;
+    private String password;
     private Long mobileNo;
     private String createdBy;
     private String address;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getCustomerID() {
         return customerID;
     }
@@ -42,6 +52,21 @@ public class Customer {
 
     public String getCustomerName() {
         return customerName;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setCustomerName(String customerName) {

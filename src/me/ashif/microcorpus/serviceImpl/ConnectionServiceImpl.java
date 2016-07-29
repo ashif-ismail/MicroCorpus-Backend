@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /*
  * Developed by Ashif Ismail
  * Associate Software Engineer,TechJini Solutions
@@ -29,5 +31,10 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Transactional
     public void addConnection(Connection conn) {
         this.connectionDAO.addConnection(conn);
+    }
+
+    @Override
+    public List<Connection> getAllConnection() {
+        return this.connectionDAO.getAllConnection();
     }
 }

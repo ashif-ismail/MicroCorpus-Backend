@@ -33,4 +33,9 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<Customer> getAllCustomers() {
         return utilMethods.getAllCustomer();
     }
+
+    @Override
+    public boolean customerLogin(String username, String password) {
+        return utilMethods.loginCustomer(username, password);
+    }
 }

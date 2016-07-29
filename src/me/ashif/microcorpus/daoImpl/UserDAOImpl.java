@@ -35,4 +35,9 @@ public class UserDAOImpl implements UserDAO {
     public List<User> getAllUsers() {
         return utilMethods.getAllUsers();
     }
+
+    @Override
+    public boolean login(String username, String password) {
+        return utilMethods.loginUser(username,password);
+    }
 }
