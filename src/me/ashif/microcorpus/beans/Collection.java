@@ -8,8 +8,7 @@ public class Collection {
    @Id
    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    private int collectionID;
-    private int connectionID;
+    private String customerID;
     private int collectionAmount;
     private String collectedBy;
     private String dateOfCollection;
@@ -21,20 +20,13 @@ public class Collection {
     public void setId(int id) {
         this.id = id;
     }
-    public int getCollectionID() {
-        return collectionID;
+
+    public String getCustomerID() {
+        return customerID;
     }
 
-    public void setCollectionID(int collectionID) {
-        this.collectionID = collectionID;
-    }
-
-    public int getConnectionID() {
-        return connectionID;
-    }
-
-    public void setConnectionID(int connectionID) {
-        this.connectionID = connectionID;
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     public int getCollectionAmount() {

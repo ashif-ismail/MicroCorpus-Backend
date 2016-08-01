@@ -35,10 +35,10 @@ public class UserController {
         this.userService.addUser(user);
     }
 
-    @RequestMapping(value = "/user/update", method = RequestMethod.PUT)
-    public void updateUser(@ModelAttribute("user") User user) {
-        this.userService.updateUser(user);
-    }
+//    @RequestMapping(value = "/user/update", method = RequestMethod.PUT)
+//    public void updateUser(@ModelAttribute("user") User user) {
+//        this.userService.updateUser(user);
+//    }
 
     @RequestMapping(value = "/user/{id}",method = RequestMethod.DELETE)
     public void deleteUserByID(@PathVariable("id") int id){

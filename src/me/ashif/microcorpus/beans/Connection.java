@@ -16,14 +16,20 @@ public class Connection {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    private int connectionID;
-    private int personID;
+    private String customerID;
     private String dateOfConn;
-    private String initialDue;
+    private int initialAmount;
     private String dateOfDue;
-    private String installmentAmount;
-    private String InstallmentType;
-    private String outstandingAmount;
+    private int installmentAmount;
+    private int totalAmount;
+    private int customerType;
+    private String customerName;
+    private String customerGuardian;
+    private String doc;
+    private String password;
+    private Long mobileNo;
+    private String connectedBy;
+    private String address;
 
     public int getId() {
         return id;
@@ -32,20 +38,13 @@ public class Connection {
     public void setId(int id) {
         this.id = id;
     }
-    public int getConnectionID() {
-        return connectionID;
+
+    public String getCustomerID() {
+        return customerID;
     }
 
-    public void setConnectionID(int connectionID) {
-        this.connectionID = connectionID;
-    }
-
-    public int getPersonID() {
-        return personID;
-    }
-
-    public void setPersonID(int personID) {
-        this.personID = personID;
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     public String getDateOfConn() {
@@ -56,12 +55,12 @@ public class Connection {
         this.dateOfConn = dateOfConn;
     }
 
-    public String getInitialDue() {
-        return initialDue;
+    public int getInitialAmount() {
+        return initialAmount;
     }
 
-    public void setInitialDue(String initialDue) {
-        this.initialDue = initialDue;
+    public void setInitialAmount(int initialAmount) {
+        this.initialAmount = initialAmount;
     }
 
     public String getDateOfDue() {
@@ -72,27 +71,83 @@ public class Connection {
         this.dateOfDue = dateOfDue;
     }
 
-    public String getInstallmentAmount() {
+    public int getInstallmentAmount() {
         return installmentAmount;
     }
 
-    public void setInstallmentAmount(String installmentAmount) {
+    public void setInstallmentAmount(int installmentAmount) {
         this.installmentAmount = installmentAmount;
     }
 
-    public String getInstallmentType() {
-        return InstallmentType;
+    public int getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setInstallmentType(String installmentType) {
-        InstallmentType = installmentType;
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public String getOutstandingAmount() {
-        return outstandingAmount;
+    public int getCustomerType() {
+        return customerType;
     }
 
-    public void setOutstandingAmount(String outstandingAmount) {
-        this.outstandingAmount = outstandingAmount;
+    public void setCustomerType(int customerType) {
+        this.customerType = customerType;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerGuardian() {
+        return customerGuardian;
+    }
+
+    public void setCustomerGuardian(String customerGuardian) {
+        this.customerGuardian = customerGuardian;
+    }
+
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Long getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(Long mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getConnectedBy() {
+        return connectedBy;
+    }
+
+    public void setConnectedBy(String connectedBy) {
+        this.connectedBy = connectedBy;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

@@ -41,22 +41,25 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    @Transactional
-    public void updateEmployee(int id,Employee e) {
-        this.employeeDAO.updateEmployee(id,e);
+    public void updateEmployee(int id, String firstName, String lastName, String email, String dateOfJoin, int empID, String username, String password, Long phoneNumber, String Qualification, String Address) {
+        this.employeeDAO.updateEmployee(id, firstName, lastName, email, dateOfJoin, empID, username, password, phoneNumber, Qualification, Address);
     }
 
+
     @Override
+    @Transactional
     public List<Employee> getEmployeeById(int id){
        return this.employeeDAO.getEmployeeById(id);
     }
 
     @Override
+    @Transactional
     public List<Employee> getAllEmployees() {
         return this.employeeDAO.getAllEmployees();
     }
 
     @Override
+    @Transactional
     public boolean employeeLogin(String username, String password) {
         return this.employeeDAO.employeeLogin(username, password);
     }

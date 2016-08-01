@@ -29,8 +29,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public void updateEmployee(int id,Employee e) {
-        utilMethods.updateEmployeeById(id,e);
+    public void updateEmployee(int id, String firstName, String lastName, String email, String dateOfJoin, int empID, String username, String password, Long phoneNumber, String Qualification, String Address) {
+        utilMethods.updateEmployeeById(id, firstName, lastName, email, dateOfJoin, empID, username, password, phoneNumber, Qualification, Address);
     }
 
     @Override

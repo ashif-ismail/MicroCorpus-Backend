@@ -55,9 +55,14 @@ public class EmployeeController {
         }
         return new ResponseEntity<List<Employee>>(employee, HttpStatus.OK);
     }
-    @RequestMapping(value = "/employee/{empID}",method = RequestMethod.PUT)
-    public void updateEmployee(@PathVariable("empID") int empID,@ModelAttribute("employee") Employee employee){
-        this.employeeService.updateEmployee(empID,employee);
+    @RequestMapping(value = "/employee/update/{id}",method = RequestMethod.PUT)
+    public void updateEmployee(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("email")String email, @RequestParam("dateOfJoin") String dateOfJoin, @RequestParam("empID")int empID, @RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("phoneNumber") Long phoneNumber, @RequestParam("Qualification") String Qualification, @RequestParam("address") String address,@PathVariable("id") int id){
+//        List<Employee> employeeList = this.employeeService.getEmployeeById(id);
+//        if (employeeList.isEmpty())
+//        {
+//           new ResponseEntity(HttpStatus.NOT_FOUND);
+//        }
+        this.employeeService.updateEmployee(id, firstName, lastName, email, dateOfJoin, empID, username, password, phoneNumber, Qualification, address);
     }
     @RequestMapping(value = "/employee/{empID}",method = RequestMethod.DELETE)
     public void deleteEmployee(@PathVariable("empID") int empID){

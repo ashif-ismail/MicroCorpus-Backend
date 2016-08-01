@@ -39,12 +39,23 @@ public class utilMethods {
         session.getTransaction().commit();
         session.close();
     }
-    public static void updateEmployeeById(int id,Object object) {
+    public static void updateEmployeeById(int id,String firstName,String lastName,String email,String dateOfJoin,int empID,String username,String password,Long phoneNumber,String Qualification,String Address) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Employee employee = (Employee) session.load(Employee.class,new Integer(id));
-        employee = (Employee) object;
-        session.update(employee);
+        String hqlQuery = "update Employee set firstName =: firstName,lastName =: lastName,email =: email,dateOfJoin =: dateOfJoin,empID =: empID,username =: username,password =: password,phoneNumber =: phoneNumber,Qualification =: Qualification,address =: address where id =: id";
+        Query query = session.createQuery(hqlQuery);
+        query.setString("firstName",firstName);
+        query.setString("lastName",lastName);
+        query.setString("email",email);
+        query.setString("dateOfJoin",dateOfJoin);
+        query.setInteger("empID",empID);
+        query.setString("username",username);
+        query.setString("password",password);
+        query.setLong("phoneNumber",phoneNumber);
+        query.setString("Qualification",Qualification);
+        query.setString("address",Address);
+        query.setInteger("id",id);
+        int modifications = query.executeUpdate();
         session.getTransaction().commit();
         session.close();
     }
@@ -63,6 +74,7 @@ public class utilMethods {
         Query query = session.createQuery(hqlQuery);
         query.setInteger("id",id);
         List result = query.list();
+//        Employee result = session.load(Employee.class, id);
         session.getTransaction().commit();
         session.close();
         return result;
@@ -88,9 +100,9 @@ public class utilMethods {
     public static List<Customer> getCustomerById(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        String hqlQuery = "from Customer where customerID = :customerID";
+        String hqlQuery = "from Connection where id = :id";
         Query query = session.createQuery(hqlQuery);
-        query.setInteger("customerID",id);
+        query.setInteger("id",id);
         List result = query.list();
         session.getTransaction().commit();
         session.close();
@@ -99,7 +111,7 @@ public class utilMethods {
     public static List<Customer> getAllCustomer(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<Customer> customerList = session.createQuery("from Customer ").list();
+        List<Customer> customerList = session.createQuery("from Connection ").list();
         session.getTransaction().commit();
         session.close();
         return customerList;
