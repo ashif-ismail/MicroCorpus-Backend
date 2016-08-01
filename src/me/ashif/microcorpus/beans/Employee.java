@@ -1,8 +1,6 @@
 package me.ashif.microcorpus.beans;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 
 /*
  * Developed by Ashif Ismail

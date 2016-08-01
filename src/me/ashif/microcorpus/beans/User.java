@@ -16,7 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int loginID;
     private String username;
     private String password;

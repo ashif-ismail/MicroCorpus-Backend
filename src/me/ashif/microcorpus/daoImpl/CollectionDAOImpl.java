@@ -1,7 +1,6 @@
 package me.ashif.microcorpus.daoImpl;
 
 import me.ashif.microcorpus.beans.Collection;
-import me.ashif.microcorpus.beans.Customer;
 import me.ashif.microcorpus.dao.CollectionDAO;
 import me.ashif.microcorpus.methods.utilMethods;
 import org.springframework.stereotype.Repository;

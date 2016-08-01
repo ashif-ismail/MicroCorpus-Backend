@@ -1,8 +1,6 @@
 package me.ashif.microcorpus.service;
 
 import me.ashif.microcorpus.beans.Collection;
-import me.ashif.microcorpus.beans.Customer;
-import me.ashif.microcorpus.dao.CollectionDAO;
 
 import java.util.List;
 

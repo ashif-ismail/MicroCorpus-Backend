@@ -1,8 +1,6 @@
 package me.ashif.microcorpus.service;
 
 import me.ashif.microcorpus.beans.Connection;
-import me.ashif.microcorpus.beans.Customer;
-import me.ashif.microcorpus.dao.ConnectionDAO;
 
 import java.util.List;
 
@@ -17,4 +15,6 @@ import java.util.List;
 public interface ConnectionService {
     void addConnection(Connection conn);
     List<Connection> getAllConnection();
+    List<Connection> getConnectionByID(int id);
+    boolean customerLogin(String username,String password);
 }

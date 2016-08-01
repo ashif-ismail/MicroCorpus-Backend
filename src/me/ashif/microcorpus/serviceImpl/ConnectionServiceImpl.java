@@ -37,4 +37,14 @@ public class ConnectionServiceImpl implements ConnectionService {
     public List<Connection> getAllConnection() {
         return this.connectionDAO.getAllConnection();
     }
+
+    @Override
+    public List<Connection> getConnectionByID(int id) {
+        return this.connectionDAO.getConnectionByID(id);
+    }
+
+    @Override
+    public boolean customerLogin(String username, String password) {
+        return this.connectionDAO.customerLogin(username,password);
+    }
 }

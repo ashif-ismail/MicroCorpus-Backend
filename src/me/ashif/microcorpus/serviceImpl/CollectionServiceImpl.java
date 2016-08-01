@@ -1,7 +1,6 @@
 package me.ashif.microcorpus.serviceImpl;
 
 import me.ashif.microcorpus.beans.Collection;
-import me.ashif.microcorpus.beans.Customer;
 import me.ashif.microcorpus.dao.CollectionDAO;
 import me.ashif.microcorpus.service.CollectionService;
 import org.springframework.beans.factory.annotation.Autowired;

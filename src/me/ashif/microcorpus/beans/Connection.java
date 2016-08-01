@@ -26,6 +26,7 @@ public class Connection {
     private String customerName;
     private String customerGuardian;
     private String doc;
+    private String username;
     private String password;
     private Long mobileNo;
     private String connectedBy;
@@ -149,5 +150,12 @@ public class Connection {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

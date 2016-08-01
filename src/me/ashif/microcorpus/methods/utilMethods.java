@@ -16,13 +16,6 @@ import java.util.List;
  *
  */
 
-/*
- * Developed by Ashif Ismail
- * Associate Software Engineer,TechJini Solutions
- * www.ashif.me
- * admin@ashif.me
- *
- */
 
 public class utilMethods {
 
@@ -104,7 +97,7 @@ public class utilMethods {
         session.close();
         return userList;
     }
-    public static List<Customer> getCustomerById(int id){
+    public static List<Connection> getConnectionById(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         String hqlQuery = "from Connection where id = :id";
@@ -114,14 +107,6 @@ public class utilMethods {
         session.getTransaction().commit();
         session.close();
         return result;
-    }
-    public static List<Customer> getAllCustomer(){
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<Customer> customerList = session.createQuery("from Connection ").list();
-        session.getTransaction().commit();
-        session.close();
-        return customerList;
     }
     public static List<Connection> getAllConnection(){
         Session session = sessionFactory.openSession();
@@ -177,7 +162,7 @@ public class utilMethods {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         boolean validUser = true;
-        String hqlQuery = "from Customer where username =:username and password =:password";
+        String hqlQuery = "from Connection where username =:username and password =:password";
         Query query = session.createQuery(hqlQuery);
         query.setString("username",username);
         query.setString("password",password);
