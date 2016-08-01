@@ -1,14 +1,20 @@
 package me.ashif.microcorpus.methods;
 
 import me.ashif.microcorpus.beans.*;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
 import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
+ */
 
 /*
  * Developed by Ashif Ismail
@@ -32,29 +38,30 @@ public class utilMethods {
     public static void removeEmployeeByID(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Employee employee = (Employee) session.load(Employee.class,new Integer(id));
+        Employee employee = session.load(Employee.class, new Integer(id));
         if(null != employee){
             session.remove(employee);
         }
         session.getTransaction().commit();
         session.close();
     }
-    public static void updateEmployeeById(int id,String firstName,String lastName,String email,String dateOfJoin,int empID,String username,String password,Long phoneNumber,String Qualification,String Address) {
+
+    public static void updateEmployeeById(int id, String firstName, String lastName, String email, String dateOfJoin, int empID, String username, String password, Long phoneNumber, String Qualification, String Address) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         String hqlQuery = "update Employee set firstName =: firstName,lastName =: lastName,email =: email,dateOfJoin =: dateOfJoin,empID =: empID,username =: username,password =: password,phoneNumber =: phoneNumber,Qualification =: Qualification,address =: address where id =: id";
         Query query = session.createQuery(hqlQuery);
-        query.setString("firstName",firstName);
-        query.setString("lastName",lastName);
-        query.setString("email",email);
-        query.setString("dateOfJoin",dateOfJoin);
-        query.setInteger("empID",empID);
-        query.setString("username",username);
-        query.setString("password",password);
-        query.setLong("phoneNumber",phoneNumber);
-        query.setString("Qualification",Qualification);
-        query.setString("address",Address);
-        query.setInteger("id",id);
+        query.setString("firstName", firstName);
+        query.setString("lastName", lastName);
+        query.setString("email", email);
+        query.setString("dateOfJoin", dateOfJoin);
+        query.setInteger("empID", empID);
+        query.setString("username", username);
+        query.setString("password", password);
+        query.setLong("phoneNumber", phoneNumber);
+        query.setString("Qualification", Qualification);
+        query.setString("address", Address);
+        query.setInteger("id", id);
         int modifications = query.executeUpdate();
         session.getTransaction().commit();
         session.close();
@@ -82,7 +89,7 @@ public class utilMethods {
     public static void removeUserByID(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        User user = (User) session.load(User.class,new Integer(id));
+        User user = session.load(User.class, new Integer(id));
         if(null != user){
             session.remove(user);
         }
@@ -102,7 +109,7 @@ public class utilMethods {
         session.beginTransaction();
         String hqlQuery = "from Connection where id = :id";
         Query query = session.createQuery(hqlQuery);
-        query.setInteger("id",id);
+        query.setInteger("id", id);
         List result = query.list();
         session.getTransaction().commit();
         session.close();

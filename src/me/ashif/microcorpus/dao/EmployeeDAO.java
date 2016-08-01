@@ -1,7 +1,16 @@
 package me.ashif.microcorpus.dao;
 
 import me.ashif.microcorpus.beans.Employee;
+
 import java.util.List;
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
+ */
 
 /*
  * Developed by Ashif Ismail
