@@ -96,7 +96,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/microcorpus_backend_war_exploded/index.jsp" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/welcome.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ashif/microcorpus/methods/utilMethods.java" afterPath="$PROJECT_DIR$/src/me/ashif/microcorpus/methods/utilMethods.java" />
     </list>
     <ignored path="microcorpus-backend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -480,7 +479,7 @@
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="microcorpus-backend" />
   </component>
-  <component name="RunManager" selected="OpenShift Deployment.OpenShift">
+  <component name="RunManager" selected="Heroku Deployment.Heroku Deployment">
     <configuration default="false" name="index.jsp" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:7777/index.jsp">
       <method />
     </configuration>
@@ -1182,7 +1181,7 @@
       <workItem from="1470042615729" duration="1491000" />
       <workItem from="1470055495373" duration="2465000" />
       <workItem from="1470064503731" duration="3713000" />
-      <workItem from="1470110118467" duration="13320000" />
+      <workItem from="1470110118467" duration="16563000" />
     </task>
     <task id="LOCAL-00001" summary="Deploy">
       <created>1470025274824</created>
@@ -1220,11 +1219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1470125855118</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Deploy">
+      <created>1470132060551</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1470132060551</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Deploy">
+      <created>1470136118405</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1470136118405</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88457000" />
+    <option name="totallyTimeSpent" value="91700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1368" height="721" extended-state="6" />
