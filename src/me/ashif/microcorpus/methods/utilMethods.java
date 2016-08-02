@@ -1,10 +1,13 @@
 package me.ashif.microcorpus.methods;
 
-import me.ashif.microcorpus.beans.*;
+import me.ashif.microcorpus.beans.Collection;
+import me.ashif.microcorpus.beans.Connection;
+import me.ashif.microcorpus.beans.Employee;
+import me.ashif.microcorpus.beans.User;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -16,6 +19,14 @@ import java.util.List;
  *
  */
 
+
+/*
+ * Developed by Ashif Ismail
+ * Associate Software Engineer,TechJini Solutions
+ * www.ashif.me
+ * admin@ashif.me
+ *
+ */
 
 public class utilMethods {
 
@@ -31,9 +42,9 @@ public class utilMethods {
     public static void removeEmployeeByID(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Employee employee = session.load(Employee.class, new Integer(id));
+        Employee employee = (Employee) session.load(Employee.class, new Integer(id));
         if(null != employee){
-            session.remove(employee);
+            session.delete(employee);
         }
         session.getTransaction().commit();
         session.close();
@@ -82,9 +93,9 @@ public class utilMethods {
     public static void removeUserByID(int id){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        User user = session.load(User.class, new Integer(id));
+        User user = (User) session.load(User.class, new Integer(id));
         if(null != user){
-            session.remove(user);
+            session.delete(user);
         }
         session.getTransaction().commit();
         session.close();

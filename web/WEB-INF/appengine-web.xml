@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Developed by Ashif Ismail
+  ~ Associate Software Engineer,TechJini Solutions
+  ~ www.ashif.me
+  ~ admin@ashif.me
+  ~
+  -->
+
+<!--
+  ~ Developed by Ashif Ismail
+  ~ Associate Software Engineer,TechJini Solutions
+  ~ www.ashif.me
+  ~ admin@ashif.me
+  ~
+  -->
+
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-  <application>microcorpus-api</application>
-  <version>1</version>
-  <threadsafe>true</threadsafe>
+    <application>microcorpus-api</application>
+    <version>1</version>
+    <threadsafe>true</threadsafe>
 </appengine-web-app>
