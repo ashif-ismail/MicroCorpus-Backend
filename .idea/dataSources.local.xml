@@ -7,5 +7,11 @@
       <schema-pattern>microcorpus_db.*</schema-pattern>
       <default-schemas>microcorpus_db.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - mssofofi_microcorpus_db@103.211.216.137" uuid="7216b085-1199-4c0d-b39a-acba89260e59">
+      <secret-storage>master_key</secret-storage>
+      <user-name>mssofofi_ashif</user-name>
+      <schema-pattern>mssofofi_microcorpus_db.*</schema-pattern>
+      <default-schemas>mssofofi_microcorpus_db.*</default-schemas>
+    </data-source>
   </component>
 </project>

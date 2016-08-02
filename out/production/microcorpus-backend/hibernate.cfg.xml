@@ -1,3 +1,11 @@
+<!--
+  ~ Developed by Ashif Ismail
+  ~ Associate Software Engineer,TechJini Solutions
+  ~ www.ashif.me
+  ~ admin@ashif.me
+  ~
+  -->
+
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
