@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.metamodel.relational.ObjectName;
 
 import java.util.List;
 
@@ -19,22 +20,6 @@ import java.util.List;
  *
  */
 
-
-/*b
- * Developed by Ashif Ismail
- * Associate Software Engineer,TechJini Solutions
- * www.ashif.me
- * admin@ashif.me
- *
- */
-
-/*
- * Developed by Ashif Ismail
- * Associate Software Engineer,TechJini Solutions
- * www.ashif.me
- * admin@ashif.me
- *
- */
 
 public class utilMethods {
 
@@ -142,6 +127,14 @@ public class utilMethods {
         session.getTransaction().commit();
         session.close();
         return collectionList;
+    }
+    public static String getEmpID(String username){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        String empID = (String) session.createQuery("select empID from Employee where username =:username").setString("username",username).uniqueResult();
+        session.getTransaction().commit();
+        session.close();
+        return empID;
     }
     public static boolean loginUser(String username,String password){
         Session session = sessionFactory.openSession();

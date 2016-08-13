@@ -27,4 +27,5 @@ public interface EmployeeService {
     List<Employee> getEmployeeById(int id);
     List<Employee> getAllEmployees();
     boolean employeeLogin(String username,String password);
+    String getEmpID(String username);
 }

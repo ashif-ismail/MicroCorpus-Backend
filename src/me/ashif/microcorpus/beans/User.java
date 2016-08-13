@@ -16,8 +16,6 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int loginID;
     private String username;
     private String password;
 
@@ -27,14 +25,6 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getLoginID() {
-        return loginID;
-    }
-
-    public void setLoginID(int loginID) {
-        this.loginID = loginID;
     }
 
     public String getUsername() {

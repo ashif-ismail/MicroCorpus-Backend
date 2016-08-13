@@ -20,7 +20,7 @@ public class Employee {
     private String lastName;
     private String email;
     private String dateOfJoin;
-    private int empID;
+    private String empID;
     private String username;
     private String password;
     private Long phoneNumber;
@@ -68,11 +68,11 @@ public class Employee {
         this.dateOfJoin = dateOfJoin;
     }
 
-    public int getEmpID() {
+    public String getEmpID() {
         return empID;
     }
 
-    public void setEmpID(int empID) {
+    public void setEmpID(String empID) {
         this.empID = empID;
     }
 

@@ -70,4 +70,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public boolean employeeLogin(String username, String password) {
         return this.employeeDAO.employeeLogin(username, password);
     }
+
+    @Override
+    public String getEmpID(String username) {
+        return this.employeeDAO.getEmpID(username);
+    }
 }

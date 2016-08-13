@@ -47,4 +47,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public boolean employeeLogin(String username, String password) {
         return utilMethods.loginEmployee(username,password);
     }
+
+    @Override
+    public String getEmpID(String username) {
+        return utilMethods.getEmpID(username);
+    }
 }

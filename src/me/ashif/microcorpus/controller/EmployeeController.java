@@ -1,5 +1,6 @@
 package me.ashif.microcorpus.controller;
 
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import me.ashif.microcorpus.beans.Employee;
 import me.ashif.microcorpus.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,11 @@ public class EmployeeController {
             return new ResponseEntity(HttpStatus.OK);
         }
         return new ResponseEntity(HttpStatus.FORBIDDEN);
+    }
+    @RequestMapping(value = "employee/getid",method = RequestMethod.POST)
+    @ResponseBody
+    public String getEmpID(@RequestParam("username") String username){
+        String result = employeeService.getEmpID(username);
+        return result;
     }
 }
